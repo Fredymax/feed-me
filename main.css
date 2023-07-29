@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-1: #1d3557;
+  --color-2: #457b9d;
+  --color-3: #a8dadc;
+  --color-4: #f1faee;
+  --color-5: #e63946;
+}
+
+body {
+  background: var(--color-1);
+  font-family: 'Sansita', sans-serif;
+  color: var(--color-4);
+  padding: 1rem;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.arrow {
+  inline-size: 16px;
+  height: 16px;
+  color: var(--color-1);
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0.6em;
+  background: var(--color-3);
+  border-radius: 0.2em;
+  cursor: pointer;
+  transition: scale 300ms ease;
+}
+
+button:active {
+  scale: 0.8;
+}
+
+.game-commands {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25em;
+  border-radius: 0.5em;
+  border: 3px dashed var(--color-2);
+  padding: 0.5em;
+  inline-size: min-content;
+}
+
+.commands-center {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.game-information {
+  margin: auto;
+  max-inline-size: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--color-2);
+  padding: 1em;
+  border-radius: 0.3em;
+}
+
+.game-text {
+  margin-block-end: 0.7em;
+  display: inline-block;
+}
+
+.score {
+  list-style: none;
+}
+
+.score b {
+  display: inline-block;
+  inline-size: 60px;
+}
+
+.score span {
+  font-weight: 300;
+}
+
+.game-container {
+  text-align: center;
+  margin-block-end: 1em;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#game {
+  border: 2px solid var(--color-2);
+  border-radius: 0.3em;
+  fill: var(--color-4);
+}
+
+.button-controls * {
+  user-select: none !important;
+  pointer-events: none;
+}
+
+dialog[open] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  inline-size: 100vw;
+  background-color: transparent;
+  border-width: 0;
+  block-size: 100vh;
+  color: white;
+
+  display: grid;
+  place-items: center;
+}
+
+.image {
+  font-size: 12rem;
+}
+
+dialog[open] .backdrop {
+  position: relative;
+  text-align: center;
+}
+
+dialog[open] .backdrop h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+dialog[open] .backdrop h2 {
+  font-size: 3em;
+}
+
+dialog[open] .backdrop button {
+  font-family: inherit;
+  font-size: 1.5em;
+  line-height: 1;
+  text-transform: uppercase;
+  word-spacing: 0.6em;
+}
+
+dialog[open]::before {
+  content: '';
+  inline-size: 100%;
+  block-size: 100vh;
+  position: absolute;
+  top: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+}
