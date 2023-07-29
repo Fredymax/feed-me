@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <dialog id="$dialog" open>
+      <div class="backdrop">
+        <div class="image">👼</div>
+        <h2>Game</h2>
+        <h1>Feed me</h1>
+        <button id="$buttonStart">Let's start</button>
+      </div>
+    </dialog>
+    <div id="app" class="hidden">
+      <div class="game-container">
+        <canvas id="game"></canvas>
+      </div>
+      <div class="game-information">
+        <div class="game-description">
+          <h2>Feed me</h2>
+          <p class="game-text">Game of speed and precision</p>
+          <ul class="score">
+            <li>
+              <b>Lives:</b> <span>💟 <span id="lives"></span></span>
+            </li>
+            <li>
+              <b>Time :</b> <span>⏰ <span id="timer">0</span>s</span>
+            </li>
+            <li>
+              <b>Record:</b> <span>🕰️ <span id="record">0</span>s</span>
+            </li>
+          </ul>
+        </div>
+        <div class="game-commands">
+          <button class="button-controls" data-direction="left" title="Left">
+            <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+            </svg>
+          </button>
+          <div class="commands-center">
+            <button class="button-controls" data-direction="up" title="Up">
+              <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4" />
+              </svg>
+            </button>
+            <button class="button-controls" data-direction="down" title="Down">
+              <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1v12m0 0 4-4m-4 4L1 9" />
+              </svg>
+            </button>
+          </div>
+          <button class="button-controls" data-direction="right" title="Right">
+            <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./constants.js"></script>
+    <script src="./helpers.js"></script>
+    <script src="./MediaAudio.js"></script>
+    <script src="./LocalStorage.js"></script>
+    <script src="./maps.js"></script>
+    <script src="./Scene.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
